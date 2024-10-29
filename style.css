@@ -1,0 +1,179 @@
+/* Typographie et couleurs */
+:root {
+    --color-bg: #F7F7FF;
+    --color-text: #262626;
+    --color-accent: #1F42E3;
+}
+
+body {
+    padding: 0; /* Supprime le padding global */
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 200px); /* Largeur totale moins la marge */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px; /* Réduit le padding du header */
+    background-color: var(--color-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Amoria', sans-serif;
+    font-size: 1.5rem;
+}
+
+.logo a {
+    color: var(--color-accent); /* couleur bleue */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+/* Style de la navigation */
+nav {
+    display: flex;
+    align-items: center; /* Centre verticalement les éléments */
+    margin-left: auto; /* Aligne le nav à droite */
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Réduit l'espacement entre les éléments */
+    margin: 0;
+}
+
+.nav-items li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--color-accent); /* Couleur bleue pour tous les liens */
+    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+}
+
+.nav-items li a:hover {
+    color: #0036c9; /* Changement de couleur au survol */
+}
+
+.cta-link {
+    color: var(--color-accent); /* Couleur bleue pour le texte "Contact" */
+    font-size: 1rem;
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.cta-link:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Structure de l'introduction */
+.introduction {
+    display: flex;
+    justify-content: space-between; /* Ajustement pour que le texte et l'image soient de chaque côté */
+    align-items: flex-end; /* Aligne le contenu vers le bas */
+    padding: 0 100px; /* Garder le padding latéral */
+    padding-top: 150px; /* Ajuste l'espace au-dessus de la section */
+    width: calc(100% - 200px); /* Largeur totale moins 200 pixels */
+    margin: auto; /* Centre horizontalement */
+    height: auto; /* Permet à la section de s'adapter à son contenu */
+}
+
+/* Texte d'introduction */
+.intro-text {
+    max-width: 600px;
+    font-family: 'Poppins', sans-serif;
+    text-align: justify; /* Aligner le texte à gauche */
+    margin-right: 15px; /* Réduit l'espace entre le texte et l'image */
+}
+
+/* Style du bouton "say hi." */
+.say-hi-button {
+    display: inline-block;
+    padding: 6px 20px; /* Réduit le padding du bouton */
+    border: 2px solid var(--color-accent); /* Bord bleu */
+    background-color: transparent; /* Fond transparent */
+    color: var(--color-accent); /* Texte en bleu */
+    font-size: 1rem;
+    text-decoration: none; /* Pas de soulignement */
+    border-radius: 25px; /* Bords arrondis */
+    margin-top: 10px; /* Réduit l'espacement au-dessus du bouton */
+    align-self: flex-end; /* Aligne le bouton vers le bas */
+}
+
+.say-hi-button:hover {
+    background-color: var(--color-accent); /* Fond bleu au survol */
+    color: #fff; /* Texte blanc au survol */
+}
+
+/* Titres avec Amoria */
+h1 {
+    font-family: 'Amoria', sans-serif;
+    font-size: 3rem;
+    color: var(--color-accent); /* couleur bleue pour "My Name is Somaht" */
+    margin-top: 0; /* Suppression de la marge par défaut */
+}
+
+p {
+    font-size: 1rem;
+    margin-top: 0.5rem; /* Réduit l'espacement au-dessus des paragraphes */
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* Image */
+.intro-photo {
+    flex: 1; /* Permet à l'image de prendre le reste de l'espace disponible */
+    display: flex; /* Flex pour centrer l'image verticalement */
+    justify-content: right; /* Centrer horizontalement l'image */
+    margin-top: 0; /* Suppression de la marge supérieure */
+}
+
+.intro-photo img {
+    max-width: 250px; /* Largeur maximale de l'image */
+    max-height: 300px; /* Hauteur maximale de l'image */
+    width: auto; /* Largeur automatique pour conserver les proportions */
+    height: auto; /* Hauteur automatique pour conserver les proportions */
+    border-radius: 15px; /* Bords arrondis */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 0; /* Assurez-vous qu'il n'y a pas de marge en bas */
+}
+
+/* Footer */
+footer {
+    margin-top: 30px; /* Réduit l'espacement au-dessus du footer */
+    padding: 20px 100px; /* Aligne le padding avec le header */
+    text-align: center;
+    background-color: var(--color-bg);
+}
+
+/* Media queries pour mobile */
+@media (max-width: 768px) {
+    .introduction {
+        flex-direction: column; /* Passe à une colonne sur mobile */
+        align-items: center; /* Centre le contenu */
+        text-align: center; /* Centre le texte */
+        padding: 30px 20px; /* Ajuste le padding */
+        width: calc(100% - 40px); /* Ajuste la largeur sur mobile si nécessaire */
+        height: auto; /* Ajustement pour les mobiles */
+    }
+
+    .intro-text {
+        margin-right: 0; /* Aucune marge à droite sur mobile */
+        margin-bottom: 15px; /* Réduit l'espace en bas */
+    }
+
+    .intro-photo img {
+        width: 200px; /* Réduit la taille de l'image sur mobile */
+    }
+
+    header {
+        padding: 15px 10px; /* Réduit le padding du header sur mobile */
+    }
+}
