@@ -1,10 +1,19 @@
-const greetings = ["Hi", "Bonjour", "Ciao", "Hola", "Hallo", "こんにちは", "안녕하세요"];
-let currentGreeting = 0;
+// Gérer l'effet de défilement de l'en-tête
+document.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
 
-function changeGreeting() {
-    const greetingElement = document.getElementById("greeting");
-    greetingElement.textContent = greetings[currentGreeting];
-    currentGreeting = (currentGreeting + 1) % greetings.length;
-}
+// Effet de changement de langue pour l'introduction
+const greeting = document.getElementById("greeting");
+const greetings = ["Hi", "Bonjour", "Ciao", "Hola"];
+let index = 0;
 
-setInterval(changeGreeting, 3000); // Change chaque 3 secondes
+setInterval(() => {
+    greeting.textContent = greetings[index];
+    index = (index + 1) % greetings.length;
+}, 3000);

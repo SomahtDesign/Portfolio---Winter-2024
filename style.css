@@ -1,4 +1,4 @@
-/* Typographie et couleurs */
+/* Variables de typographie et couleurs */
 :root {
     --color-bg: #F7F7FF;
     --color-text: #262626;
@@ -6,11 +6,11 @@
 }
 
 body {
-    padding: 0; /* Supprime le padding global */
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
-    margin: 0;
 }
 
 /* Header */
@@ -18,14 +18,19 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100% - 200px); /* Largeur totale moins la marge */
+    width: calc(100% - 200px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 100px; /* Réduit le padding du header */
+    padding: 15px 100px;
     background-color: var(--color-bg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -34,146 +39,368 @@ header {
 }
 
 .logo a {
-    color: var(--color-accent); /* couleur bleue */
-    text-decoration: none; /* Pas de soulignement */
+    color: var(--color-accent);
+    text-decoration: none;
 }
 
-/* Style de la navigation */
+/* Navigation */
 nav {
     display: flex;
-    align-items: center; /* Centre verticalement les éléments */
-    margin-left: auto; /* Aligne le nav à droite */
+    align-items: center;
+    margin-left: auto;
 }
 
 .nav-items {
     list-style: none;
     display: flex;
-    gap: 15px; /* Réduit l'espacement entre les éléments */
+    gap: 15px;
     margin: 0;
 }
 
 .nav-items li a {
     text-decoration: none;
     font-size: 1rem;
-    color: var(--color-accent); /* Couleur bleue pour tous les liens */
-    transition: color 0.3s ease; /* Transition pour le changement de couleur */
+    color: var(--color-accent);
+    transition: color 0.3s ease;
 }
 
 .nav-items li a:hover {
-    color: #0036c9; /* Changement de couleur au survol */
+    color: #0036c9;
 }
 
 .cta-link {
-    color: var(--color-accent); /* Couleur bleue pour le texte "Contact" */
+    color: var(--color-accent);
     font-size: 1rem;
-    text-decoration: none; /* Pas de soulignement */
+    text-decoration: none;
 }
 
 .cta-link:hover {
-    text-decoration: underline; /* Soulignement au survol */
+    text-decoration: underline;
 }
 
-/* Structure de l'introduction */
+/* Section d'introduction */
 .introduction {
     display: flex;
-    justify-content: space-between; /* Ajustement pour que le texte et l'image soient de chaque côté */
-    align-items: flex-end; /* Aligne le contenu vers le bas */
-    padding: 0 100px; /* Garder le padding latéral */
-    padding-top: 150px; /* Ajuste l'espace au-dessus de la section */
-    width: calc(100% - 200px); /* Largeur totale moins 200 pixels */
-    margin: auto; /* Centre horizontalement */
-    height: auto; /* Permet à la section de s'adapter à son contenu */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    padding-top: 150px;
+    width: calc(100% - 200px);
+    margin: auto;
+    gap: 2rem;
 }
 
-/* Texte d'introduction */
 .intro-text {
     max-width: 600px;
-    font-family: 'Poppins', sans-serif;
-    text-align: justify; /* Aligner le texte à gauche */
-    margin-right: 15px; /* Réduit l'espace entre le texte et l'image */
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    margin-right: 15px;
 }
 
-/* Style du bouton "say hi." */
+/* Style du bouton "say hi" */
 .say-hi-button {
-    display: inline-block;
-    padding: 6px 20px; /* Réduit le padding du bouton */
-    border: 2px solid var(--color-accent); /* Bord bleu */
-    background-color: transparent; /* Fond transparent */
-    color: var(--color-accent); /* Texte en bleu */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    padding: 6px 10px;
+    border: 2px solid var(--color-accent);
+    background-color: transparent;
+    color: var(--color-accent);
     font-size: 1rem;
-    text-decoration: none; /* Pas de soulignement */
-    border-radius: 25px; /* Bords arrondis */
-    margin-top: 10px; /* Réduit l'espacement au-dessus du bouton */
-    align-self: flex-end; /* Aligne le bouton vers le bas */
+    text-decoration: none;
+    border-radius: 25px;
 }
 
 .say-hi-button:hover {
-    background-color: var(--color-accent); /* Fond bleu au survol */
-    color: #fff; /* Texte blanc au survol */
+    background-color: var(--color-accent);
+    color: #fff;
 }
 
 /* Titres avec Amoria */
 h1 {
     font-family: 'Amoria', sans-serif;
     font-size: 3rem;
-    color: var(--color-accent); /* couleur bleue pour "My Name is Somaht" */
-    margin-top: 0; /* Suppression de la marge par défaut */
+    color: var(--color-accent);
+    margin-top: 0;
 }
 
 p {
     font-size: 1rem;
-    margin-top: 0.5rem; /* Réduit l'espacement au-dessus des paragraphes */
-    line-height: 1.6;
+    margin-top: 0.5rem;
+    line-height: 1.8;
     color: var(--color-text);
 }
 
 /* Image */
 .intro-photo {
-    flex: 1; /* Permet à l'image de prendre le reste de l'espace disponible */
-    display: flex; /* Flex pour centrer l'image verticalement */
-    justify-content: right; /* Centrer horizontalement l'image */
-    margin-top: 0; /* Suppression de la marge supérieure */
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .intro-photo img {
-    max-width: 250px; /* Largeur maximale de l'image */
-    max-height: 300px; /* Hauteur maximale de l'image */
-    width: auto; /* Largeur automatique pour conserver les proportions */
-    height: auto; /* Hauteur automatique pour conserver les proportions */
-    border-radius: 15px; /* Bords arrondis */
+    max-width: 250px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    border-radius: 15px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-    margin-bottom: 0; /* Assurez-vous qu'il n'y a pas de marge en bas */
+}
+
+/* Section Projet */
+.project-section {
+    padding: 50px 100px;
+    text-align: center;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.project-title .title-left,
+.project-title .title-right {
+    font-family: 'Amoria', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-accent);
+}
+
+
+
+/* Section Projet */
+.project-content {
+    display: flex;
+    align-items: stretch; /* Ensure both the image and text stretch to the same height */
+    max-width: 100%;
+    gap: 20px; /* Space between images */
+}
+
+/* Project details section */
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1; /* Take the remaining space */
+    align-items: flex-start; /* Align content to the right */
+    justify-content: flex-start; /* Start content at the top */
+}
+
+.project-intro {
+    text-align: right; /* Justify text */
+    margin-top: 0; /* Remove any default top margin */
+    margin-bottom: auto; /* Allow space below */
+    width: 100%; /* Ensure it uses the full width */
+    max-width: 100%; /* Avoid exceeding the container width */
+    align-items: flex-start;
+}
+
+/* Couverture image */
+.cover-image {
+    flex: 0 0 33.33%; /* Keeps Couverture at 1/3 of the space */
+    max-width: 33.33%; /* Ensure it doesn't exceed this width */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Additional images section */
+.additional-images {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between; /* Spread images evenly */
+    align-items: flex-end; /* Aligns images to the bottom */
+    flex: 1; /* Use remaining space */
+}
+
+/* Adjustments for the Affiche and Mockup images */
+.additional-images .project-item {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Specific adjustments for the Affiche and Mockup images */
+.additional-images .project-item:first-child { /* For Affiche */
+    flex: 0 0 33.33%; /* 1/3 of the space */
+    max-width: 33.33%; /* Limit width */
+}
+
+.additional-images .project-item:last-child { /* For Mockup */
+    flex: 0 0 66.66%; /* 2/3 of the space */
+    max-width: 66.66%; /* Limit width */
+}
+
+/* Section Photographie */
+.photography-section {
+    padding: 50px 100px;
+    text-align: center;
+}
+
+.photography-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.photography-title .title-left,
+.photography-title .title-right {
+    font-family: 'Amoria', sans-serif;
+    font-size: 2.5rem;
+    color: var(--color-accent);
+}
+
+.photography-intro {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: var(--color-text);
+}
+
+/* Grille de photos */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: stretch;
+}
+
+.photo-item {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, z-index 0.3s;
+    filter: grayscale(20%);
+}
+
+.photo-item.highlight {
+    grid-column: span 2;
+    grid-row: span 2;
+    filter: grayscale(0%);
+    z-index: 1;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.photo-item.highlight:hover {
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+/* Effets de transition de salutation */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
 /* Footer */
 footer {
-    margin-top: 30px; /* Réduit l'espacement au-dessus du footer */
-    padding: 20px 100px; /* Aligne le padding avec le header */
     text-align: center;
+    padding: 10px;
     background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.9rem;
 }
 
-/* Media queries pour mobile */
+/* Responsive styles for mobile devices */
 @media (max-width: 768px) {
-    .introduction {
-        flex-direction: column; /* Passe à une colonne sur mobile */
-        align-items: center; /* Centre le contenu */
-        text-align: center; /* Centre le texte */
-        padding: 30px 20px; /* Ajuste le padding */
-        width: calc(100% - 40px); /* Ajuste la largeur sur mobile si nécessaire */
-        height: auto; /* Ajustement pour les mobiles */
-    }
-
-    .intro-text {
-        margin-right: 0; /* Aucune marge à droite sur mobile */
-        margin-bottom: 15px; /* Réduit l'espace en bas */
-    }
-
-    .intro-photo img {
-        width: 200px; /* Réduit la taille de l'image sur mobile */
+    .nav-items {
+        display: none;
     }
 
     header {
-        padding: 15px 10px; /* Réduit le padding du header sur mobile */
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: calc(1.2rem + 0.5vw);
+    }
+
+    .introduction {
+        padding: 20px;
+        gap: 1rem;
+    }
+
+    .intro-text {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .say-hi-button {
+        font-size: calc(0.9rem + 0.3vw);
+        padding: 5px 8px;
+    }
+
+    h1 {
+        font-size: calc(2rem + 1vw);
+    }
+
+    p {
+        font-size: calc(0.9rem + 0.2vw);
+    }
+
+    .intro-photo {
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+    }
+
+    .intro-photo img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .photography-section {
+        padding: 20px;
+    }
+
+    .photography-title .title-left,
+    .photography-title .title-right {
+        font-size: calc(2rem + 0.5vw);
+    }
+
+    .photography-intro {
+        font-size: calc(0.9rem + 0.2vw);
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .photo-item {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, z-index 0.3s;
+        filter: grayscale(20%);
+    }
+
+    footer {
+        font-size: calc(0.8rem + 0.2vw);
+    }
+
+    h1, p, .say-hi-button, .photography-title .title-left, .photography-title .title-right {
+        font-size: min(max(calc(2rem + 1vw), 8px), 3rem);
+    }
+
+    .say-hi-button {
+        font-size: min(max(calc(0.9rem + 0.3vw), 8px), 1.2rem);
+    }
+
+    p {
+        font-size: min(max(calc(0.9rem + 0.2vw), 8px), 1rem);
     }
 }
